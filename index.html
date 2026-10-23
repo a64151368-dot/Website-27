@@ -851,7 +851,7 @@ certRegistry(){
 }
 
 </style>`;
-    html=html.replace('
+    html=html.replace(`
 <style id="methodika-transparent-bubbles">
 /* «Методика»: прибираємо кольорові плашки, залишаємо прозорі бульбашки-індикатори */
 .author-content-hero .author-content-rays .ray-plate{
@@ -887,7 +887,7 @@ certRegistry(){
 }
 </style>
 
-</head>',injected+'\n</head>');
+</head>`,injected+'\n</head>');
     html=html.replace('<p>Сертифікати підвищення професійного розвитку</p>','<p>Сертифікати підвищення професійного розвитку</p><div class="cert-canva-wrap"><a class="cert-canva-btn" href="https://canva.link/5bpc62npy90rs2u" target="_blank" rel="noopener noreferrer">✦ Сертифікати <span aria-hidden="true">↗</span></a></div>');
     frame.srcdoc=html;
     status.remove();
