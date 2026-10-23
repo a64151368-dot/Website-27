@@ -851,7 +851,43 @@ certRegistry(){
 }
 
 </style>`;
-    html=html.replace('</head>',injected+'\n</head>');
+    html=html.replace('
+<style id="methodika-transparent-bubbles">
+/* «Методика»: прибираємо кольорові плашки, залишаємо прозорі бульбашки-індикатори */
+.author-content-hero .author-content-rays .ray-plate{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  opacity:0!important;
+}
+.author-content-hero .author-content-rays .ray-label{
+  color:#173f2c!important;
+  text-shadow:none!important;
+  font-weight:800!important;
+  letter-spacing:.005em;
+}
+.author-content-hero .author-content-rays .ray-icon{
+  display:block!important;
+  border:1.5px solid rgba(38,105,73,.48)!important;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.78),rgba(215,239,222,.30) 48%,rgba(100,157,123,.12) 100%)!important;
+  box-shadow:inset 0 1px 4px rgba(255,255,255,.78),0 2px 8px rgba(29,83,55,.10)!important;
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+}
+.author-content-hero .author-content-rays a.ray-item:hover .ray-icon,
+.author-content-hero .author-content-rays a.ray-item:focus-visible .ray-icon{
+  border-color:rgba(25,91,58,.72)!important;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.9),rgba(197,231,207,.42) 48%,rgba(75,139,98,.2) 100%)!important;
+  box-shadow:inset 0 1px 4px rgba(255,255,255,.85),0 0 0 .25cqw rgba(58,121,82,.18),0 3px 10px rgba(29,83,55,.14)!important;
+}
+.author-content-hero .author-content-rays .ray-slot{background:transparent!important}
+@media(max-width:600px){
+ .author-content-hero .author-content-rays .ray-label{font-weight:750!important}
+ .author-content-hero .author-content-rays .ray-icon{border-width:1px!important}
+}
+</style>
+
+</head>',injected+'\n</head>');
     html=html.replace('<p>Сертифікати підвищення професійного розвитку</p>','<p>Сертифікати підвищення професійного розвитку</p><div class="cert-canva-wrap"><a class="cert-canva-btn" href="https://canva.link/5bpc62npy90rs2u" target="_blank" rel="noopener noreferrer">✦ Сертифікати <span aria-hidden="true">↗</span></a></div>');
     frame.srcdoc=html;
     status.remove();
