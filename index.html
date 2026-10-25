@@ -617,7 +617,7 @@ const DATA=[
   {e:"⭐",t:"Brawl Stars: рух і сили",a:"Командні місії на кінематику та динаміку.",f:"Гейміфікація"},
   {e:"⚡",t:"Гаррі Поттер: факультети",a:"Бали за практичні завдання.",f:"Гейміфікація"},
   {e:"🛡️",t:"Козацька доба: вебквест",a:"Геометрія фортець і маршрути походів.",f:"Вебквест"}]}]}]},
-{e:"🎓",t:"Освітні проекти та тьюторство",d:"",pages:[{t:"Освітні проекти та тьюторство",b:[{k:"html",html:'<div class="glass pad section-soon"><p class="lead">Матеріали розділу незабаром з\'являться.</p></div>'}]}]},
+{e:"🎓",t:"Освітні проекти та тьюторство",d:"",pages:[{t:"Освітні проекти та тьюторство",b:[{k:"html",html:`<section class="edu-hero-wrap" aria-label="Освітні проєкти та тьюторство"><div class="edu-hero"><img class="edu-hero-bg" src="https://github.com/a64151368-dot/Website-27/blob/main/6a827de8-4b84-409c-94ee-6062467c3b25.png?raw=true" alt="Освітні проєкти та тьюторство: чотири заходи" loading="eager"><nav class="edu-clouds" aria-label="Заходи"><a class="edu-cloud edu-cloud-1" href="https://a64151368-dot.github.io/1-Kongres/" target="_blank" rel="noopener noreferrer" aria-label="Перший конгрес тьюторів (відкриється в новій вкладці)"><span class="edu-shine" aria-hidden="true"></span><span class="edu-name">Перший конгрес тьюторів</span></a><a class="edu-cloud edu-cloud-2" href="https://a64151368-dot.github.io/Catch-Up/" target="_blank" rel="noopener noreferrer" aria-label="Тьюторинговий Catch-Up у середній школі (відкриється в новій вкладці)"><span class="edu-shine" aria-hidden="true"></span><span class="edu-name">Тьюторинговий Catch‑Up у середній школі</span></a><a class="edu-cloud edu-cloud-3" href="https://a64151368-dot.github.io/IV-congres-T/" target="_blank" rel="noopener noreferrer" aria-label="Тьюторинг як технологія життєстійкості (відкриється в новій вкладці)"><span class="edu-shine" aria-hidden="true"></span><span class="edu-name">Тьюторинг як технологія життєстійкості</span></a><a class="edu-cloud edu-cloud-4" href="https://a64151368-dot.github.io/25-Congres/" target="_blank" rel="noopener noreferrer" aria-label="Освітній супровід в умовах війни (відкриється в новій вкладці)"><span class="edu-shine" aria-hidden="true"></span><span class="edu-name">Освітній супровід в умовах війни</span></a></nav></div><nav class="edu-chips" aria-label="Заходи (список)"><a class="edu-chip" href="https://a64151368-dot.github.io/1-Kongres/" target="_blank" rel="noopener noreferrer">Перший конгрес тьюторів</a><a class="edu-chip" href="https://a64151368-dot.github.io/Catch-Up/" target="_blank" rel="noopener noreferrer">Тьюторинговий Catch-Up у середній школі</a><a class="edu-chip" href="https://a64151368-dot.github.io/IV-congres-T/" target="_blank" rel="noopener noreferrer">Тьюторинг як технологія життєстійкості</a><a class="edu-chip" href="https://a64151368-dot.github.io/25-Congres/" target="_blank" rel="noopener noreferrer">Освітній супровід в умовах війни</a></nav></section>`}]}]},
 {e:"🤝",t:"Професійна спільнота та обмін досвідом",d:"",pages:[{t:"Професійна спільнота та обмін досвідом",b:[{k:"html",html:'<div class="glass pad section-soon"><p class="lead">Матеріали розділу незабаром з\'являться.</p></div>'}]}]},
 {e:"📋",t:"Експертна діяльність та оцінювання",d:"",pages:[{t:"Експертна діяльність та оцінювання",b:[{k:"html",html:'<div class="glass pad section-soon"><p class="lead">Матеріали розділу незабаром з\'являться.</p></div>'}]}]}
 ];
@@ -1086,5 +1086,54 @@ header .bar-top{display:flex;align-items:center;justify-content:center;min-width
 }
 @media(max-width:760px){.topnav{justify-content:flex-start}}
 .section-soon{margin-top:12px}
+</style>
+<style id="edu-projects-clouds">
+/* «Освітні проєкти та тьюторство»: банер-зображення з чотирма інтерактивними райдужними хмаринками */
+#stage section:has(.edu-hero-wrap)>h2{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)} /* назва вже є на зображенні */
+.edu-hero-wrap{margin:4px auto 10px}
+.edu-hero{position:relative;container-type:inline-size;width:min(100%,calc((100svh - 120px)*1.7787));aspect-ratio:1672/940;margin:0 auto;border-radius:clamp(14px,2vw,28px);overflow:hidden;background:#eef6f6;box-shadow:0 18px 44px rgba(46,78,76,.14)}
+.edu-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.edu-clouds{position:absolute;inset:0}
+.edu-cloud{position:absolute;top:36.5%;height:45.5%;display:flex;align-items:flex-end;justify-content:center;padding:0 .8cqw 4.6cqw;text-decoration:none;
+ border-radius:44% 50% 46% 52% / 40% 44% 54% 56%;isolation:isolate;overflow:hidden;clip-path:inset(0 round 46%);
+ transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,filter .35s;
+ box-shadow:0 0 0 1px rgba(255,255,255,.35) inset,0 0 18px rgba(255,255,255,.25)}
+.edu-cloud-1{left:2.8%;width:23.2%;animation-delay:0s}
+.edu-cloud-2{left:27.3%;width:22.6%;border-radius:52% 46% 50% 48% / 46% 50% 50% 54%}
+.edu-cloud-3{left:51.8%;width:21.6%;border-radius:46% 50% 44% 50% / 42% 46% 54% 58%}
+.edu-cloud-4{left:75.1%;width:22.6%;border-radius:48% 46% 50% 46% / 44% 46% 54% 56%}
+/* райдужний перелив, як сонячне світло на мильній бульбашці */
+.edu-cloud::before{content:"";position:absolute;inset:0;z-index:-2;border-radius:inherit;
+ background:radial-gradient(120% 90% at 30% 20%,rgba(255,140,190,.30),transparent 55%),radial-gradient(110% 90% at 80% 75%,rgba(120,200,255,.30),transparent 55%),radial-gradient(90% 80% at 20% 85%,rgba(150,240,180,.26),transparent 60%),radial-gradient(90% 70% at 85% 15%,rgba(255,220,120,.28),transparent 60%);
+ mix-blend-mode:soft-light;opacity:.55;animation:edu-hue 8s linear infinite}
+.edu-cloud-2::before{animation-duration:10s;animation-direction:reverse}
+.edu-cloud-3::before{animation-duration:10s}
+.edu-cloud-4::before{animation-duration:12s;animation-direction:reverse}
+.edu-cloud::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;
+ background:linear-gradient(115deg,rgba(255,105,180,.0) 20%,rgba(255,160,200,.16) 32%,rgba(255,230,140,.2) 40%,rgba(150,255,190,.18) 48%,rgba(120,200,255,.2) 56%,rgba(190,150,255,.16) 64%,transparent 76%);
+ background-size:300% 100%;mix-blend-mode:screen;animation:edu-flow 6s ease-in-out infinite}
+.edu-cloud-2::after{animation-delay:-1.5s}.edu-cloud-3::after{animation-delay:-3s}.edu-cloud-4::after{animation-delay:-4.5s}
+/* сонячний відблиск, що пробігає хмаринкою */
+.edu-shine{position:absolute;top:-20%;bottom:-20%;left:-60%;width:38%;z-index:0;pointer-events:none;
+ background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:edu-sweep 5.5s ease-in-out infinite}
+.edu-cloud-2 .edu-shine{animation-delay:-1.4s}.edu-cloud-3 .edu-shine{animation-delay:-2.8s}.edu-cloud-4 .edu-shine{animation-delay:-4.2s}
+.edu-name{position:relative;z-index:1;display:block;max-width:82%;text-align:center;
+ font:700 clamp(9px,1.5cqw,21px)/1.22 var(--fh,Georgia,serif);color:#14514c;letter-spacing:-.005em;
+ text-shadow:0 0 6px rgba(255,255,255,.95),0 0 14px rgba(255,255,255,.85);text-wrap:balance}
+.edu-cloud:hover,.edu-cloud:focus-visible{transform:translateY(-1.2%) scale(1.035);filter:saturate(1.25) brightness(1.04);
+ box-shadow:0 0 0 2px rgba(255,255,255,.75) inset,0 0 26px rgba(255,214,120,.55),0 0 44px rgba(150,190,255,.45);outline:none}
+.edu-cloud:hover::before,.edu-cloud:focus-visible::before{opacity:.95;animation-duration:3.5s}
+.edu-cloud:focus-visible{box-shadow:0 0 0 3px #f4b25f inset,0 0 30px rgba(255,214,120,.6)}
+@keyframes edu-hue{to{filter:hue-rotate(360deg)}}
+@keyframes edu-flow{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@keyframes edu-sweep{0%,55%{left:-60%}85%,100%{left:130%}}
+/* список-дубль для вузьких екранів, де підписи на зображенні надто дрібні */
+.edu-chips{display:none;grid-template-columns:1fr 1fr;gap:10px;margin:14px auto 0;width:min(100%,640px)}
+.edu-chip{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;min-height:62px;padding:10px 12px;border-radius:20px;text-decoration:none;
+ font-weight:800;font-size:.86rem;line-height:1.3;color:#14514c;border:1px solid rgba(255,255,255,.9);box-shadow:0 8px 20px rgba(46,78,76,.12);
+ background:linear-gradient(120deg,#ffe3ef,#fff3cf,#dcf8e6,#dcefff,#ebe0ff,#ffe3ef);background-size:300% 100%;animation:edu-flow 7s ease-in-out infinite}
+@media(max-width:700px){.edu-chips{display:grid}.edu-name{display:none}.edu-cloud{padding:0}}
+@media(max-width:380px){.edu-chips{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.edu-cloud::before,.edu-cloud::after,.edu-shine,.edu-chip{animation:none!important}.edu-shine{display:none}.edu-cloud{transition:none}}
 </style>
 </body></html>
