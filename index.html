@@ -617,7 +617,9 @@ const DATA=[
   {e:"⭐",t:"Brawl Stars: рух і сили",a:"Командні місії на кінематику та динаміку.",f:"Гейміфікація"},
   {e:"⚡",t:"Гаррі Поттер: факультети",a:"Бали за практичні завдання.",f:"Гейміфікація"},
   {e:"🛡️",t:"Козацька доба: вебквест",a:"Геометрія фортець і маршрути походів.",f:"Вебквест"}]}]}]},
-{e:"📊",t:"Результати",d:"",pages:[{t:"Результати",b:[]}]}
+{e:"🎓",t:"Освітні проекти та тьюторство",d:"",pages:[{t:"Освітні проекти та тьюторство",b:[{k:"html",html:'<div class="glass pad section-soon"><p class="lead">Матеріали розділу незабаром з\'являться.</p></div>'}]}]},
+{e:"🤝",t:"Професійна спільнота та обмін досвідом",d:"",pages:[{t:"Професійна спільнота та обмін досвідом",b:[{k:"html",html:'<div class="glass pad section-soon"><p class="lead">Матеріали розділу незабаром з\'являться.</p></div>'}]}]},
+{e:"📋",t:"Експертна діяльність та оцінювання",d:"",pages:[{t:"Експертна діяльність та оцінювання",b:[{k:"html",html:'<div class="glass pad section-soon"><p class="lead">Матеріали розділу незабаром з\'являться.</p></div>'}]}]}
 ];
 
 /* ═══ 3. ЗАГАЛЬНІ ФУНКЦІЇ ═══ */
@@ -807,7 +809,7 @@ DATA[1] = {
     t: "Методика",
     b: [{
       k: "html",
-      html: `<section class="profile-fullscreen" aria-label="Новий сайт розділу Методика">
+      html: `<section class="profile-fullscreen methodika-fullscreen" aria-label="Новий сайт розділу Методика">
         <iframe src="https://a64151368-dot.github.io/Metodic/"
           title="Методика — новий сайт"
           loading="eager"
@@ -840,7 +842,7 @@ function route(){const anc=ANC[location.hash];if(anc&&$(".hero2")){toAnchor(anc)
    if(m!==1&&M.pages.length>1)s.append(seg(M.pages.map(x=>x.t),p,i=>go(m,i)))
   }
   M.pages[p].b.forEach(b=>{if(b.h)s.append(el(`<h3 class="bh">${b.h}</h3>`));s.append(R[b.k](b))})}
- if(m!==2&&m!==3)s.append(pager(idx));
+ if(m<2)s.append(pager(idx));
   $("#prog").style.width=idx/(FLAT.length-1)*100+"%";
  
  /* горизонтальний перехід: стара секція з'їжджає вбік, нова в'їжджає з протилежного боку */
@@ -852,12 +854,12 @@ function route(){const anc=ANC[location.hash];if(anc&&$(".hero2")){toAnchor(anc)
 function setCur(){const h=location.hash,r=/^#m(\d+)-(\d+)$/.exec(h),cur=r&&DATA[+r[1]-1]&&DATA[+r[1]-1].pages[+r[2]-1]?h:ANC[h]?h:"#home";
  $$("#topnav a").forEach(a=>{
   const target=a.getAttribute("href");
-  const active=target===cur||(target==="#m2-1"&&r&&+r[1]===2)||(target==="#m3-1"&&r&&+r[1]===3)||(target==="#m4-1"&&r&&+r[1]===4);
+  const active=target===cur||(target==="#m2-1"&&r&&+r[1]===2)||(target==="#m3-1"&&r&&+r[1]===3)||(target==="#m4-1"&&r&&+r[1]===4)||(target==="#m5-1"&&r&&+r[1]===5);
   active?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")
  })}
 function navClick(e){const a=e.target.closest("a[href^='#']");if(!a)return;e.preventDefault();const h=a.getAttribute("href");instant=true;setTimeout(()=>instant=false,400);
  if((location.hash||"#home")===h)route();else location.hash=h}
-$("#topnav").innerHTML=[["#home","Головна"],["#m1-1","Професійний профіль"],["#m2-1","Методика"],["#m3-1","Результати"]].map(([h,t])=>`<a href="${h}">${t}</a>`).join("");
+$("#topnav").innerHTML=[["#home","Головна"],["#m1-1","Професійний профіль"],["#m2-1","Методика"],["#m3-1","Освітні проекти та тьюторство"],["#m4-1","Професійна спільнота та обмін досвідом"],["#m5-1","Експертна діяльність та оцінювання"]].map(([h,t])=>`<a href="${h}">${t}</a>`).join("");
 $("#topnav").onclick=navClick;document.addEventListener("click",e=>{if(e.target.closest(".cta a,.method-actions a"))navClick(e)});
 addEventListener("hashchange",route);
 addEventListener("keydown",e=>{
@@ -1066,4 +1068,23 @@ header .bar-top{display:flex;align-items:center;justify-content:center;min-width
 }
 </style>
 
+<style id="methodika-no-clip">
+/* «Методика»: контейнер не обрізає вміст — висота не менша за 760px, сторінка прокручується за потреби */
+.profile-fullscreen.methodika-fullscreen{height:auto!important;min-height:0!important;overflow:visible!important}
+.profile-fullscreen.methodika-fullscreen iframe{height:calc(100vh - 82px);height:calc(100dvh - 82px);min-height:760px}
+@media(max-width:640px){.profile-fullscreen.methodika-fullscreen iframe{height:calc(100dvh - 76px);min-height:680px}}
+/* Банер «Методика»: зображення вміщується повністю, заголовок угорі не зникає під маскою */
+#stage .author-content-hero{max-height:none!important;height:auto;aspect-ratio:16/9;overflow:visible}
+#stage .author-content-bg{object-fit:contain!important;object-position:center top;
+ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);
+ mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+/* Меню з шести пунктів */
+@media(min-width:761px){
+ header{max-width:1400px}
+ .topnav{flex-wrap:wrap;overflow:visible;justify-content:center;row-gap:4px}
+ .topnav a{font-size:clamp(.78rem,1vw,.92rem);padding:9px clamp(9px,1.1vw,15px)}
+}
+@media(max-width:760px){.topnav{justify-content:flex-start}}
+.section-soon{margin-top:12px}
+</style>
 </body></html>
